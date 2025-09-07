@@ -4,22 +4,22 @@ Yang Zhang, Bogdan Vasilescu, Huaimin Wang, and Vladimir Filkov. 2018. One size 
 
 ## 1. Fichamento de Conteúdo
 
-`Aqui deve-se incluir uma análise geral do artigo em um parágrafo de  8 a 15 linhas. É um texto corrido nas palavras da pessoa que está fazendo o fichamento (não deve ter cópia literal de conteúdo do artigo). Pode conter opinião do leitor a partir do texto. Idealmente deve mencionar o contexto tratado pelo artigo, o problema que ele tenta resolver, o(s) método(s) que ele emprega e o(s) resultado(s) que obtém. O texto deve ser uma forma simples que resume o que se entendeu do artigo. Exemplo:`
-
-
-O artigo caracteriza dois projetos de ciência cidadã na área de astronomia, são eles: GalaxyZoo e The Milky Way Project.  Nesses projetos, os voluntários executam tarefas de computação humana, como classificação ou marcação de galáxias em imagens captadas por telescópios. As tarefas são executadas por meio de um sistema web chamado Zooniverse. O objetivo do estudo é caracterizar o engajamento de voluntários ao executarem tarefas dos projetos nesse sistema. É usado um conjunto de dados coletados do sistema contendo 1.031.0994 mil execuções de tarefas por 110.302 voluntários ao longo de mais de dois anos. A caracterização é realizada por meio de quatro métricas (_frequency, daily productivity, typical session duration e devoted time_), análise de correlação entre as métricas e modelagem de distribuição. Os resultados mostram que o conjunto de voluntários que atua nos projetos se subdivide em "voluntários transientes", aqueles executam tarefas no projeto uma vez e não voltam mais, e "regulares", aqueles que executam tarefas no projeto por pelo menos dois dias. Os transientes são a maioria (67%). Apesar de serem a minoria, os regulares são extremamente importantes, pois eles executam a maior parte das tarefas disponíveis no sistema (78%). Nos dois projetos, a métrica frequency pode ser modelada por uma distribuição Zipf, as métricas _daily product activity, typical session duration_ e _devoted time_ podem ser modeladas por uma distribuição Log Normal. A execução de tarefas no sistema e a chegada de novos voluntários no sistema ocorrem em dias de rajadas (_busy days_), dias nos quais há cobertura na mídia (ex. site da BBC) que leva muitas pessoas a acessarem a página Web do projeto.
+O artigo realiza um estudo empírico sobre fluxos de trabalho de implantação contínua (CD) utilizando contêineres Docker, com foco em projetos de código aberto hospedados no GitHub e registrados no Docker Hub. Os autores identificam dois workflows predominantes: o baseado em builds automáticos do Docker Hub (DHW) e o baseado em ferramentas de integração contínua, como Travis CI e CircleCI (CIW). Por meio de uma abordagem mista, combinando survey qualitativo com 168 desenvolvedores e análise quantitativa de 855 projetos e mais de 133 mil builds, o estudo explora as motivações, barreiras e trade-offs associados a cada abordagem. Os resultados mostram que, embora ambos os workflows apresentem vantagens e desvantagens, a escolha entre eles deve considerar fatores como experiência da equipe, necessidade de controle versus simplicidade, latência de build e estabilidade de configuração. O artigo conclui que não existe uma solução única para todos os casos, destacando a importância de decisões informadas baseadas em evidências empíricas.
 
 ## 2. Fichamento Bibliográfico 
 
-`Nesta parte, ideias e conceitos que aparecem no artigo devem ser organizados e descritos com as palavras do leitor, e, idealmente, devem ser indicadas as páginas onde aparecem no texto. Deve-se incluir de 3 a 6  itens. Exemplo:`
+* _Continuous Deployment (CD)_ é uma prática de engenharia de software que visa automatizar a entrega e implantação de software após quaisquer alterações no código, permitindo que o software esteja sempre em estado implantável (página 1).
+* _Docker Hub Auto-Builds (DHW)_ é um workflow no qual o Docker Hub constrói automaticamente imagens a partir de arquivos fonte no GitHub sempre que ocorrem mudanças, utilizando webhooks para acionar os builds (página 2).
+* _CI-Based Workflow (CIW)_ é um workflow no quais ferramentas de CI como Travis CI ou CircleCI são utilizadas para construir e publicar imagens Docker durante o estágio de build e teste, com posterior push para o Docker Hub (página 2).
+* _Build latency_ refere-se ao tempo decorrido desde o início até o fim de um build bem-sucedido, sendo uma métrica crítica para avaliar a eficiência do processo de CD (página 7).
+* _Dockerfile stability_ é medida pelo número de alterações no arquivo Dockerfile em janelas de tempo, indicando a maturidade e a consistência da configuração do contêiner ao longo do tempo (página 8).
 
 
-* _Frequency_ (frequência) é o número de dias em que o voluntário esteve ativo executando tarefas no sistema/projeto (página 54).
-* _Daily productivity_ (produtividade diária) é a quantidade média de tarefas que o voluntário executa por dia em que está ativo (página 54).
-* _Typical session duration_ (duração média da sessão) é a quantidade de tempo seguido que o usuário permanece executando tarefas no projeto/sistema (página 54).
-* _Devoted time_ é o total de tempo que o voluntário permaneceu executando tarefas no sistema contando todas as suas participações, ou seja, somando as horas em todos os dias em que esteve ativo (página 54).
+## 3. Fichamento de Citações
 
-## 3. Fichamento de Citações 
-
-* _"Since AWS Re-Invent 2018 started to mention that the migration to microservices blindly was a mistake [1], more and more practitioners have started discussing the topics that migrating from monolith to microservices. Even there are examples of switching from microservices back to the monolith like Amazon PrimeVideo [6].In general, monoliths and microservices are not "perfect" and they have their own different drawbacks [9]."_
-*
+* _"Continuous deployment (CD), also referred to as continuous delivery, is the fast-paced, automation-heavy software engineering approach in which teams work in short iterations to produce software that is deployable (production ready) at any time."_
+* _"Containerization has transformed CD workflows, promising additional speedups and higher level of abstraction."_
+* _"We found that two Docker image deployment workflows were most prominent: (1) a Docker Hub auto-builds Workflow (denoted DHW), where the registry itself builds the image automatically whenever GitHub source files change; and (2) a CI-based Workflow (denoted CIW), where CI tools build images during the build and test stage, then publish to Docker Hub."_
+* _"Our findings indicate that developers face trade-offs when choosing between different CD workflows with respect to configurability, simplicity, requirements, performance, stability, developer experience, etc."_
+* _"Release frequency tends to decrease over time. But DHW tends to have lower release frequency than CIW."_
+* _"Build latency tends to increase slightly over time. Interestingly, DHW tends to have longer build latency than CIW."_
